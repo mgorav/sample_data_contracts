@@ -1,0 +1,19 @@
+"contract:\n  description: Data contract specifying information related to Customer\
+  \ 360.\n  name: Customer 360 Data Contract\n  version: '1.0'\nentities:\n  - attributes:\n\
+  \      - constraints:\n          length: '10'\n        description: Unique identifier\
+  \ for the customer.\n        name: CustomerID\n        type: string\n      - constraints:\n\
+  \          max: '100'\n          min: '0'\n        description: Age of the customer.\n\
+  \        name: Age\n        type: integer\n    description: Information related\
+  \ to individual customers.\n    name: Customer\n  - attributes:\n      - constraints:\n\
+  \          format: YYYY-MM-DD\n        description: Date of birth of the individual.\n\
+  \        name: DateOfBirth\n        type: date\n      - description: Gender of the\
+  \ individual.\n        name: Gender\n        type: string\n        constraints:\n\
+  \          allowed_values: ['Male', 'Female', 'Other']\n    description: Information\
+  \ related to demographic details of the customer.\n    name: Demographics\nservices:\n\
+  \  - description: Service to create customer information.\n    endpoint: /api/create-customer-info\n\
+  \    method: POST\n    name: CreateCustomerInfo\n    request:\n      body:\n   \
+  \     customer_id: string\n        name: string\n        email: string\n       \
+  \ phone: string\n        address: string\n        age: integer\n        date_of_birth:\
+  \ date\n        gender: string\n      type: JSON\n    response:\n      body:\n \
+  \       success: boolean\n        message: string\n      type: JSON\nmetadata:\n\
+  \  author: Gaurav\n  createdOn: '2024-02-27'\n  lastUpdated: '2024-02-27'\n"
