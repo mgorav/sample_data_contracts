@@ -1,7 +1,7 @@
 contract:
   description: Data contract specifying information related to Customer 360.
   name: Customer 360 Data Contract
-  version: '1.0'
+  version: '2.0'
 entities:
   - attributes:
       - constraints:
