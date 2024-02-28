@@ -5,7 +5,7 @@ contract:
 entities:
   - attributes:
       - constraints:
-          length: '10'
+          length: '15'
         description: Unique identifier for the customer.
         name: CustomerID
         type: string
