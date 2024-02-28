@@ -1,0 +1,57 @@
+contract:
+  description: Data contract specifying information related to Customer 360.
+  name: Customer 360 Data Contract
+  version: '1.0'
+entities:
+  - attributes:
+      - constraints:
+          length: '10'
+        description: Unique identifier for the customer.
+        name: CustomerID
+        type: string
+      - constraints:
+          max: '100'
+          min: '0'
+        description: Age of the customer.
+        name: Age
+        type: integer
+    description: Information related to individual customers.
+    name: Customer
+  - attributes:
+      - constraints:
+          format: YYYY-MM-DD
+        description: Date of birth of the individual.
+        name: DateOfBirth
+        type: date
+      - description: Gender of the individual.
+        name: Gender
+        type: string
+        constraints:
+          allowed_values: ['Male', 'Female', 'Other']
+    description: Information related to demographic details of the customer.
+    name: Demographics
+services:
+  - description: Service to create customer information.
+    endpoint: /api/create-customer-info
+    method: POST
+    name: CreateCustomerInfo
+    request:
+      body:
+        customer_id: string
+        name: string
+        email: string
+        phone: string
+        address: string
+        age: integer
+        date_of_birth: date
+        gender: string
+      type: JSON
+    response:
+      body:
+        success: boolean
+        message: string
+      type: JSON
+metadata:
+  author: Gaurav
+  createdOn: '2024-02-27'
+  lastUpdated: '2024-02-27'
